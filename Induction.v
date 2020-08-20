@@ -570,6 +570,12 @@ Proof.
 Theorem eqb_refl : forall n : nat,
   true = (n =? n).
 Proof.
+  intros n.
+  induction n as [| n'].
+  - reflexivity.
+  - simpl.
+   apply IHn'.
+Qed.
   (* FILL IN HERE *) Admitted.
 (** [] *)
 

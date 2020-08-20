@@ -43,8 +43,8 @@ CAMLFLAGS         := $(COQMF_CAMLFLAGS)
 HASNATDYNLINK     := $(COQMF_HASNATDYNLINK)
 OCAMLWARN         := $(COQMF_WARN)
 
-Makefile.conf: 
-	coq_makefile -Q . LF OTHERFLAGS = '-Q . LF ' COQLIBS = '' -install none Preface.v Basics.v Induction.v Lists.v Poly.v Tactics.v Logic.v IndProp.v Maps.v ProofObjects.v IndPrinciples.v Rel.v Imp.v ImpParser.v ImpCEvalFun.v Extraction.v Auto.v Postscript.v Bib.v PrefaceTest.v BasicsTest.v InductionTest.v ListsTest.v PolyTest.v TacticsTest.v LogicTest.v IndPropTest.v MapsTest.v ProofObjectsTest.v IndPrinciplesTest.v RelTest.v ImpTest.v ImpParserTest.v ImpCEvalFunTest.v ExtractionTest.v AutoTest.v PostscriptTest.v BibTest.v -o Makefile
+Makefile.conf: _CoqProject
+	coq_makefile -f _CoqProject Auto.v AutoTest.v Basics.v BasicsTest.v Bib.v BibTest.v Extraction.v ExtractionTest.v Imp.v ImpCEvalFun.v ImpCEvalFunTest.v ImpParser.v ImpParserTest.v ImpTest.v IndPrinciples.v IndPrinciplesTest.v IndProp.v IndPropTest.v Induction.v InductionTest.v Lists.v ListsTest.v Logic.v LogicTest.v Maps.v MapsTest.v Poly.v PolyTest.v Postscript.v PostscriptTest.v Preface.v PrefaceTest.v ProofObjects.v ProofObjectsTest.v Rel.v RelTest.v Tactics.v TacticsTest.v -o Makefile
 
 # This file can be created by the user to hook into double colon rules or
 # add any other Makefile code he may need
@@ -795,7 +795,7 @@ $(addsuffix .d,$(MLPACKFILES)): %.mlpack.d: %.mlpack
 # If this makefile is created using a _CoqProject we have coqdep get
 # options from it. This avoids argument length limits for pathological
 # projects. Note that extra options might be on the command line.
-VDFILE_FLAGS:=$(if ,-f ,) $(CMDLINE_COQLIBS) $(CMDLINE_VFILES)
+VDFILE_FLAGS:=$(if _CoqProject,-f _CoqProject,) $(CMDLINE_COQLIBS) $(CMDLINE_VFILES)
 
 $(VDFILE): $(VFILES)
 	$(SHOW)'COQDEP VFILES'

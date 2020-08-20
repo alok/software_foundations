@@ -917,6 +917,8 @@ Proof.
 
 (* Do not modify the following line: *)
 Definition manual_grade_for_rev_injective : option (nat*string) := None.
+(* Theorem rev_injective: forall (l1 l2: natlist), rev l1 = rev l2  -> l1 -> l2. *)
+(* one idea: rev is involution, which is bijection which implies injection.  *)
 (** [] *)
 
 (* ################################################################# *)
