@@ -58,7 +58,7 @@ Proof.
     gets instantiated with [m]. *)
 
 Theorem silly2a : forall (n m : nat),
-     (n,n) = (m,m)  ->
+     (n, n) = (m, m)  ->
      (forall (q r : nat), (q,q) = (r,r) -> [q] = [r]) ->
      [n] = [m].
 Proof.
