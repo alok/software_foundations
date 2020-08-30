@@ -186,7 +186,7 @@ Example trans_eq_exercise : forall (n m o p : nat),
 Proof.
   (* FILL IN HERE *) 
 intros.
-apply H with (m := n+p).
+apply H with (m := n + p).
 apply H in H0.
 Admitted.
 (** [] *)
