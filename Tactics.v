@@ -175,7 +175,8 @@ Proof.
 (** Actually, we usually don't have to include the name [m] in
     the [with] clause; Coq is often smart enough to figure out which
     instantiation we're giving. We could instead write: [apply
-    trans_eq with [c;d]]. *)
+    trans_eq with [c;d]].
+*)
 
 (** **** Exercise: 3 stars, standard, optional (apply_with_exercise)  *)
 Example trans_eq_exercise : forall (n m o p : nat),
@@ -183,7 +184,11 @@ Example trans_eq_exercise : forall (n m o p : nat),
      (n + p) = m ->
      (n + p) = (minustwo o).
 Proof.
-  (* FILL IN HERE *) Admitted.
+  (* FILL IN HERE *) 
+intros.
+apply H with (m:=n+p).
+apply H in H0.
+Admitted.
 (** [] *)
 
 (* ################################################################# *)
