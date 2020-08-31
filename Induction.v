@@ -151,7 +151,7 @@ Abort.
 
 Theorem plus_n_O : forall n:nat, n = n + 0.
 Proof.
-  intros n. induction n as [| n' IHn'].
+  intros n. induction n as [|n' IHn'].
   - (* n = 0 *)    reflexivity.
   - (* n = S n' *) simpl. rewrite <- IHn'. reflexivity.  Qed.
 
