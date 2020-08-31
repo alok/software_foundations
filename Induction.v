@@ -119,7 +119,7 @@ Abort.
 Theorem plus_n_O_secondtry : forall n:nat,
   n = n + 0.
 Proof.
-  intros n. destruct n as [|n'] eqn:E.
+  intros n. destruct n as [|n'] eqn: E.
   - (* n = 0 *)
     reflexivity. (* so far so good... *)
   - (* n = S n' *)
