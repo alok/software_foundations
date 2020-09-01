@@ -210,7 +210,7 @@ Proof.
   intros n m.
   induction n as [|n' Ihn'].
   - simpl. trivial.
-  - simpl.  Search S.
+  - rewrite  
   (* FILL IN HERE *) Admitted.
 
 Theorem plus_comm : forall n m : nat,
