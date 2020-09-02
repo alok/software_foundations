@@ -189,6 +189,7 @@ Proof.
     variables, the [induction] tactic will automatically move them
     into the context as needed.) *)
 
+
 (** **** Exercise: 2 stars, standard, recommended (basic_induction)  
 
     Prove the following using induction. You might need previously
