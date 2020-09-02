@@ -698,8 +698,11 @@ Fixpoint exp (base power : nat) : nat :=
 
     Translate this into Coq. *)
 
-Fixpoint factorial (n:nat) : nat
-  (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
+Fixpoint factorial (n:nat) : nat :=
+  match n with
+    | 0 => 1
+    | S n' => n * (factorial n')
+  end.
 
 Example test_factorial1:          (factorial 3) = 6.
 (* FILL IN HERE *) Admitted.
