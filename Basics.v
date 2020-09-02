@@ -1330,7 +1330,12 @@ Theorem identity_fn_applied_twice :
   (forall (x : bool), f x = x) ->
   forall (b : bool), f (f b) = b.
 Proof.
-  (* FILL IN HERE *) Admitted.
+  intros f H b.
+  rewrite  -> H.
+  rewrite  -> H.
+  trivial.
+Qed.
+  (* FILL IN HERE *) 
 
 (** [] *)
 
@@ -1363,7 +1368,17 @@ Theorem andb_eq_orb :
   (andb b c = orb b c) ->
   b = c.
 Proof.
-  (* FILL IN HERE *) Admitted.
+  intros b c H.
+  destruct b.
+  - simpl in H.
+  rewrite <- H.
+  trivial.
+  - simpl in H.
+    rewrite  <- H.
+    trivial.
+Qed.
+
+  (* FILL IN HERE *) 
 
 (** [] *)
 
