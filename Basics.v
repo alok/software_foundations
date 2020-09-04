@@ -284,9 +284,10 @@ Proof. simpl. reflexivity. Qed.
 
 Definition nandb (b1:bool) (b2:bool) : bool :=
 match (b1, b2) with
-| (true,_) => false
-| (_,true) => false
-| (false,false) => true
+  | (true, false) => true
+  | (false, true) => true
+  | (true, true) => false
+  | (false, false) => true
 end.
 
 Example test_nandb1:               (nandb true false) = true.
