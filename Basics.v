@@ -1,7 +1,5 @@
 (** * Basics: Functional Programming in Coq *)
 
-
-
 (* REMINDER:
 
           #####################################################
