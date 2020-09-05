@@ -1422,8 +1422,18 @@ Inductive bin : Type :=
         for binary numbers, and a function [bin_to_nat] to convert
         binary numbers to unary numbers. *)
 
-Fixpoint incr (m:bin) : bin
-  (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
+(* TODO fix *)
+Fixpoint incr (m:bin) : bin :=
+  (* REPLACE THIS LINE WITH ":= _your_definition_ ." *)
+match m with
+| Z => B Z
+| (B _) as n => A n
+| A n => B n
+end.
+
+Compute incr (B (B (B Z))).
+
+
 
 Fixpoint bin_to_nat (m:bin) : nat
   (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
