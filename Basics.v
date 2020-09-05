@@ -1435,8 +1435,6 @@ Compute incr (B (B (B Z))).
 
 
 
-
-
 Fixpoint bin_to_nat (m:bin) : nat
   (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
 
